@@ -1,4 +1,4 @@
--- Editor utilities: autopairs, indent guides, linting, highlighting, auto-save, error-lens
+-- Editor utilities: autopairs, indent guides, linting, highlighting, auto-save, error-lens , image
 -- guess-indent, todo-comments, img-clip, undotree, wakatime, suda, visual-multi,
 -- grammarly LSP.
 
@@ -29,6 +29,8 @@ vim.pack.add({
   'https://github.com/numToStr/Comment.nvim',
   -- error-lens
   'https://github.com/chikko80/error-lens.nvim',
+  -- image
+  'https://github.com/3rd/image.nvim',
 })
 
 -- autopairs
@@ -73,4 +75,16 @@ require('error-lens').setup({
   auto_adjust = {
     enable = false,
   },
+})
+-- image
+require('image').setup({
+  backend = 'kitty',
+  integrations = {
+    markdown = {
+      enabled = true,
+      download_remote_images = true,
+    },
+  },
+  max_width = 100,
+  max_height = 40,
 })
