@@ -1,4 +1,4 @@
--- Editor utilities: autopairs, indent guides, linting, highlighting, auto-save,
+-- Editor utilities: autopairs, indent guides, linting, highlighting, auto-save, error-lens
 -- guess-indent, todo-comments, img-clip, undotree, wakatime, suda, visual-multi,
 -- grammarly LSP.
 
@@ -27,6 +27,8 @@ vim.pack.add({
   'https://github.com/emacs-grammarly/lsp-grammarly',
   -- Smart comment toggling
   'https://github.com/numToStr/Comment.nvim',
+  -- error-lens
+  'https://github.com/chikko80/error-lens.nvim',
 })
 
 -- autopairs
@@ -65,3 +67,10 @@ require('todo-comments').setup { signs = false }
 -- Comment.nvim
 require('Comment').setup()
 
+-- error lens
+require('error-lens').setup({
+  enabled = true,
+  auto_adjust = {
+    enable = false,
+  },
+})
